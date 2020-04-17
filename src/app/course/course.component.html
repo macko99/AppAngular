@@ -1,0 +1,10 @@
+<div class="card ">
+  <img class="card-img-top" src="{{course.url}}" alt="{{course.name}}" style="width:100%">
+  <div class="card-body">
+    <h4 class="card-title">{{course.name}} </h4>
+    <p class="card-text">{{course.forma}}</p>
+    <p class="card-text">ECTS: {{course.ects}} | Semestr: {{course.semestr}}</p>
+    <button (click)="onDelete(course.id)" type="button" class="btn btn-outline-danger">Usuń</button>
+    <a routerLink='/details/{{course.id}}' type="button" class="btn btn-success float-right">Więcej</a>
+  </div>
+</div>

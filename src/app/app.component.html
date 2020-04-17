@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink='/list'>Lista kursów<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [hidden]='isUser()' routerLink='/my'>Moje kursy</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" [hidden]='isUser()' routerLink='/addnew'>Dodaj kurs<span
+          class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [hidden]='!isUser()' routerLink='/login'>Logowanie</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [hidden]='!isUser()' routerLink='/register'>Rejestracja</a>
+      </li>
+      <li class="nav-item">
+        <a (click)='logOut()' [hidden]='isUser()' class='dark nav-link' routerLink='/login'>
+          Wyloguj
+        </a>
+      </li>
+    </ul>
+
+    <span class="navbar-text" [hidden]='isUser()'>
+        <b>{{userData.email}}</b>
+      </span>
+
+
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

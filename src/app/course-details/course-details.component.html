@@ -1,0 +1,50 @@
+<div *ngIf='course != null' style='margin-top: 50px; margin-bottom: 60px '>
+  <div class="card mb-4">
+    <img class="card-img-top" src="{{course.url}}" alt="Card image cap">
+
+    <div class="card-body">
+      <h1 class="card-title" style="text-align: center">{{course.name}}</h1>
+
+      <div class="card text-white bg-warning mb-3">
+        <div class="card-header">Ocena:</div>
+        <div class="card-body">
+          <app-rating [userRating]='userRating' [rating]="course.rating"
+                      (courseIsRating)="onSaveRating($event)"></app-rating>
+          <ngb-alert [hidden]='message2 == ""' type="dark">{{message2}}</ngb-alert>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-6">
+          <div class="card text-white bg-success mb-3">
+            <div class="card-header">Szczegóły:</div>
+            <div class="card-body">
+              <p class="card-text">Semetr: {{course.semestr}}</p>
+              <p class="card-text">Liczba punktów ects: {{course.ects}}</p>
+              <p class="card-text">Forma prowadzenia zajęć: {{course.forma}}</p>
+              <p class="card-text">Zjęte miejsca: {{course.occupiedPlaces}}/{{course.maxStudents}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">Opis:</div>
+            <div class="card-body">
+              <p class="card-text text-left">{{course.desc}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button type="button" class="btn btn-dark" (click)='tryJoinCourse()'>Zapisz się na {{course.name}}!</button>
+
+    </div>
+
+    <ngb-alert [hidden]='message == ""' type="success">{{message}}</ngb-alert>
+  </div>
+</div>
+
+

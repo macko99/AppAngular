@@ -1,0 +1,39 @@
+<div class='col-12 text-center' style="margin-top: 80px">
+  <h1>Wyszukaj kurs</h1>
+  <br>
+  <hr>
+  <div class="row">
+    <div class="col-sm-4">
+      <label for="minSem"><h5>Semestr:</h5><br><b>min: </b>{{minSem}}</label>
+      <input [(ngModel)]="minSem" type="range" class="custom-range" min="0" max="7" step="1" id="minSem">
+      <label for="maxSem"><b>max: </b>{{maxSem}}</label>
+      <input [(ngModel)]="maxSem" type="range" class="custom-range" min="0" max="7" step="1" id="maxSem">
+    </div>
+    <div class="col-sm-4">
+      <label for="minRating"><h5>Przedział średniej ocen:</h5><br><b>min: </b>{{minRating}}</label>
+      <input [(ngModel)]="minRating" type="range" class="custom-range" min="0" max="10" step="0.1" id="minRating">
+      <label for="maxRating"><b>max: </b>{{maxRating}}</label>
+      <input [(ngModel)]="maxRating" type="range" class="custom-range" min="0" max="10" step="0.1" id="maxRating">
+    </div>
+    <div class="col-sm-4">
+      <label for="minRating"><h5>Przedział punktów ECTS:</h5><br><b>min: </b>{{minEcts}}</label>
+      <input [(ngModel)]="minEcts" type="range" class="custom-range" min="0" max="100" step="1" id="minRating">
+      <label for="maxRating"><b>max: </b>{{maxEcts}}</label>
+      <input [(ngModel)]="maxEcts" type="range" class="custom-range" min="0" max="32" step="1" id="maxRating">
+    </div>
+    <div class="col-sm-4">
+      <br>
+      <label for="desc"><h5>Nazwa:</h5></label>
+    </div>
+    <div class="col-sm-4">
+      <br>
+      <input [(ngModel)]="searchName" class="form-control col-12" id="name" aria-describedby="nameError">
+    </div>
+    <div class="col-sm-4">
+      <br>
+      <button (click)='onChangeProperties()' class='btn btn-success'>Szukaj</button>
+    </div>
+  </div>
+  <br>
+  <hr>
+</div>

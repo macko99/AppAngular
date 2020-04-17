@@ -1,0 +1,9 @@
+Oceń:
+<ngb-rating (click)="onSaveRating(hovered)" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly"
+            [(rate)]="userRating"></ngb-rating>
+<br>
+Średnia ocena kursu:
+<b>{{this.rating.allRatingCounter == 0 ? 0 : this.rating.sumRating / this.rating.allRatingCounter}}</b>
+
+<p>Twoja ocena: {{userRating2}}</p>
+

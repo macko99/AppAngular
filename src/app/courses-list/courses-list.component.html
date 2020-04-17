@@ -1,0 +1,12 @@
+<div class="container">
+  <app-search-course-panel (propertiesAreChanged)="searchCourses($event)">
+  </app-search-course-panel>
+  <ngb-alert [hidden]='message == ""' type="dark">{{message}}</ngb-alert>
+  <div class='row'>
+    <div class='col-12 col-sm-6 col-md-4 col-lg-3' style='margin-top: 20px; margin-bottom: 20px'
+         *ngFor="let cours of courses | keyvalue | valuesPipe | searchPipe : searchName | searchPipeSemester : minSem : maxSem | searchPipeRatingRange : minRating : maxRating | searchPipeEctsRange : minEcts : maxEcts">
+      <app-course [course]="cours" (coursIsDeleted)="deleteCourse($event)"></app-course>
+    </div>
+  </div>
+
+</div>
